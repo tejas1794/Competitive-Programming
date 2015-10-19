@@ -7,9 +7,5 @@ reverse3([7, 0, 0]) → [0, 0, 7]
 '''
 
 def reverse3(nums):
-  numz = ([0,0,0])
-  numz[0] = nums[2]
-  numz[1] = nums[1]
-  numz[2] = nums[0]
-  return numz
-#Using reversed(nums) gave iterator objects instead of list.
+  #Updated with single lined solution using slicing
+  return nums[::-1]
