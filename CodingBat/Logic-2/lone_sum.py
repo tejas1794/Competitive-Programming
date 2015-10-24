@@ -6,11 +6,18 @@ lone_sum(3, 2, 3) ? 2
 lone_sum(3, 3, 3) ? 0
 '''
 
+#def lone_sum(a, b, c):
+#  if(not (a==b==c)): 
+#    if (a == b): return c
+#   elif (b==c): return a
+#    elif (a == c): return b
+#    else: return a+b+c
+#  return 0
+
+#Better Answer:
 def lone_sum(a, b, c):
-  if(not (a==b==c)): 
-    if (a == b): return c
-    elif (b==c): return a
-    elif (a == c): return b
-    else: return a+b+c
-  return 0
-  
+  res = 0
+  if (a != b and a != c): res += a
+  if (b != a and b != c): res += b
+  if (c != a and c != b): res += c
+  return res
