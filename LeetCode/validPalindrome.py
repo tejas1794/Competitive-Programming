@@ -12,15 +12,31 @@ Have you consider that the string might be empty? This is a good question to ask
 For the purpose of this problem, we define empty string as valid palindrome.
 
 '''
-#Approach: Simply looping through the string and adding anything which is alphanumeric to an array. Finally, we simply use python slicing to check if a reverse of the array is same as array (thus marking the palindrome). 
-#Runtime Analysis: Because of two seperate loops(one to make the array and other to check elements) makes it a linear algorithm. Basically, it has a run complexity of O(n) and space complexity of O(n)
+#Updated faster solution: Using regular expressions and importing re is way faster.
+#Simply filtering the string through the findall and lower functions
+#and matching the reversed string with the original string.
+
 class Solution(object):
     def isPalindrome(self, s):
         """
         :type s: str
         :rtype: bool
         """
-        a = []
-        for i in xrange(len(s)):
-            if s[i].isalnum(): a.append(s[i].lower())
+		import re
+        a = ''.join(re.findall(r'\w*',a)).lower()
         return a[::-1]==a
+
+#Older Solutions:
+#Approach: Simply looping through the string and adding anything which is alphanumeric to an array. Finally, we simply use python slicing to check if a reverse of the array is same as array (thus marking the palindrome). 
+#Runtime Analysis: Because of two seperate loops(one to make the array and other to check elements) makes it a linear algorithm. Basically, it has a run complexity of O(n) and space complexity of O(n)
+
+#class Solution(object):
+#    def isPalindrome(self, s):
+#        """
+#        :type s: str
+#        :rtype: bool
+#        """
+#       a = []
+#        for i in xrange(len(s)):
+#            if s[i].isalnum(): a.append(s[i].lower())
+#        return a[::-1]==a
