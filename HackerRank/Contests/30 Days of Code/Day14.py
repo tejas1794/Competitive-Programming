@@ -1,4 +1,6 @@
 '''
+Day 14: All about Scope!
+
 The class Difference is started for you in the editor. It has a private instance array (elements) for storing N non-negative integers, and a public integer (maxDifference) for storing the maximum absolute difference.
 
 Code for handling Input/Output is provided for you in the editor. Your task is to write the class constructor for Difference and the computeDifference method so that it finds the maximum absolute difference between any two numbers in N and stores it in maxDifference.
